@@ -40,4 +40,7 @@ and assuming our virtual environment is in the same root folder honey.
 - '>> ~/cron.log 2>&1' for saving errors into a file in the home directory.
 - Checkout this [link](https://phoenixnap.com/kb/crontab-reboot) for further information if you run into errors.
 - Finally, save changes by pressing Control + S and exit Nano by pressing Control + X
-- Your script is now ready. Shut down your pc and startup, open your terminal and run ```bash $ docker ps``` to confirm that Honeygain is up.
+- Your script is now ready. Shut down your pc and startup, open your terminal and run the following to confirm that Honeygain is up.
+```bash 
+$ docker ps
+``` 
