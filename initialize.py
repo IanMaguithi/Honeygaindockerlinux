@@ -1,10 +1,10 @@
 import sys
-import os.path
+import pathlib
 
 from read_write_file import write_file
 from validator import check_valid_email
 
-data_file = os.path.join(os.getcwd(), "data.txt")
+data_file = pathlib.Path.home().joinpath("data.json")
 
 email = sys.argv[1]
 password = sys.argv[2]

@@ -1,11 +1,11 @@
-import os.path
+import pathlib
 import subprocess
 from datetime import datetime
 
 from connection_test import ping
 from read_write_file import read_file
 
-data_file = os.path.join(os.getcwd(), "data.txt")
+data_file = pathlib.Path.home().joinpath("data.json")
 
 
 def get_honey(_email, _password, _device_name):
