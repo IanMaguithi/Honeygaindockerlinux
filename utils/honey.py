@@ -2,8 +2,8 @@ import pathlib
 import subprocess
 from datetime import datetime
 
-from connection_test import ping
-from read_write_file import read_file
+from utils.connection_test import ping
+from utils.read_write_file import read_file
 
 data_file = pathlib.Path.home().joinpath("data.json")
 
