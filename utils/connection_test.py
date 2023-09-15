@@ -1,7 +1,7 @@
 import socket
 
 
-def ping():
+def connection_test():
     timeout = 10
     try:
         socket.setdefaulttimeout(timeout)

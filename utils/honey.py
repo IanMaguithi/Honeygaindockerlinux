@@ -2,13 +2,13 @@ import pathlib
 import subprocess
 from datetime import datetime
 
-from utils.connection_test import ping
+from utils.connection_test import connection_test
 from utils.read_write_file import read_file
 
 data_file = pathlib.Path.home().joinpath("data.json")
 
 
-def get_honey(_email, _password, _device_name):
+def start_honeygain_service(_email, _password, _device_name):
     with open("/tmp/output.log", "a") as output:
         subprocess.call(
             f"docker run -d honeygain/honeygain -tou-accept -email {_email} -pass {_password} "
@@ -17,9 +17,9 @@ def get_honey(_email, _password, _device_name):
 
 
 def run_get_honey():
-    if ping():
+    if connection_test():
         data = read_file(data_file)
-        get_honey(data["email"], data["password"], data["device_name"])
+        start_honeygain_service(data["email"], data["password"], data["device_name"])
     else:
         with open("/tmp/output.log", "a") as output:
             output.write(f"Honey gain task didn't start up due to connectivity issue at: {datetime.now()}")

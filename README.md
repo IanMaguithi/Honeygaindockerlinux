@@ -30,7 +30,7 @@ Then:
    pip install -r requirements.txt 
    ```
 
-__Important:__ depending on your system, make sure to use `pip3` and `python3` instead.
+**Important:** depending on your system, make sure to use `pip3` and `python3` instead.
 
 ## Docker Installation
 
