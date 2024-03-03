@@ -34,7 +34,7 @@ Then:
 
 ## Docker Installation
 
-1. Install and setup Docker using the following [link](https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-20-04?__cf_chl_managed_tk__=0q5JO5Q6D5hHeex7hKV5y.YuiSxw3IOqzoA2TcJKtfw-1643460564-0-gaNycGzNDD0) if you do not already have it installed in your machine.
+1. Install and setup Docker [here](https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-20-04?__cf_chl_managed_tk__=0q5JO5Q6D5hHeex7hKV5y.YuiSxw3IOqzoA2TcJKtfw-1643460564-0-gaNycGzNDD0) if you do not already have it installed in your machine.
 
 2. All information on how to use Honeygain with Docker can be found in this link [here](https://hub.docker.com/r/honeygain/honeygain).
 
@@ -52,7 +52,7 @@ Then:
    python3 initialize.py your_email your_password your_device_name
    ```
 
-2. Find the path to where the project is located. TDo this by running the following command:
+2. Find the path to where the project is located. Do this by running the following command:
 
    ```bash
    # print working directory
@@ -75,9 +75,9 @@ Then:
    crontab -e
    ```
 
-- You will be prompted to select an editor to update the cron task with if you have multiple text editors. Choose your preferred option.
-In this case however, we'll use the default option Nano.
-- Use the following command to set our script to run at every system boot.
+2. You will be prompted to select an editor to update the cron task with if you have multiple text editors. Choose your preferred option.
+In this case, however, we'll use the default option nano.
+3. Use the following command to set our script to run at every system boot.
 @reboot [path to venv] [path to project] I'll use an example to elaborate using the path we had obtained earlier in step 4
 and assuming our virtual environment is in the same root folder honey.
 
@@ -85,16 +85,21 @@ and assuming our virtual environment is in the same root folder honey.
    @reboot /home/user/folder/Honeygaindockerlinux/venv/bin/python /home/user/folder/Honeygaindockerlinux/main.py >> ~/cron.log 2>&1
    ```
 
-- '>> ~/cron.log 2>&1' for saving errors into a file in the home directory.
-- Checkout this [link](https://phoenixnap.com/kb/crontab-reboot) for further information if you run into errors.
-- Finally, save changes by pressing Control + S and exit Nano by pressing Control + X
-- Your script is now ready. Shut down your pc and startup, open your terminal and run the following to confirm that your Honeygain docker image is up.
+4. '>> ~/cron.log 2>&1' This extra step in the command above logs errors into cron.log. You can view the output of the logs by running the following command on your terminal.
+
+   ```bash
+   cat cron.log
+   ```
+  
+5. Check out this [link](https://phoenixnap.com/kb/crontab-reboot) for further information if you run into errors.
+6. Finally, save changes by pressing Control + S and exit Nano by pressing Control + X
+7. Your script is now ready. Restart your machine, open your terminal, and run the following to confirm that your Honeygain docker image is up.
 
    ```bash
    docker ps
    ```
 
-- After the script has started you should see your new device running on your dashboard.
+8. After the script has started you should see your new device running on your dashboard.
 
 ## Manually executing the script
 
@@ -108,4 +113,4 @@ and assuming our virtual environment is in the same root folder honey.
 
 ### Do you need help?
 
-If you should encounter any issue, please first [search for similar issues](https://github.com/IanMaguithi/Honeygaindockerlinux/issues) and only if you can't find any, create a new issue.
+If you should encounter any issue, please first [search for similar issues](https://github.com/IanMaguithi/Honeygaindockerlinux/issues), and only if you can't find any, create a new issue.
